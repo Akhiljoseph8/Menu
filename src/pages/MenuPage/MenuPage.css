@@ -191,10 +191,6 @@ body {
 }
 
 @media (max-width: 1000px) {
-    .menu-container {
-        padding: 15px;
-    }
-
     .menu-title {
         font-size: 28px;
     }
