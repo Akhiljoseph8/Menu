@@ -9,28 +9,26 @@ const MenuPage = () => {
   const [menuItems, setMenuItems] = useState({});
 
   useEffect(() => {
-    const fetchMenu = async () => {
-      try {
-        const response = await getMenu();
-        if (response && response.data) {
-          const formattedMenu = {};
-
-          response.data.forEach((menu) => {
-            formattedMenu[menu.menuName] = menu.items || [];
-          });
-
-          setMenuItems(formattedMenu);
-
-          const firstCategory = Object.keys(formattedMenu)[0] || "";
-          setActiveTab(firstCategory);
-        }
-      } catch (error) {
-        console.error("Error fetching menu:", error);
-      }
-    };
-
     fetchMenu();
   }, []);
+
+  const fetchMenu = async () => {
+    try {
+      const response = await getMenu();
+      if (response && response.data) {
+        const formattedMenu = {};
+
+        response.data.forEach((menu) => {
+          formattedMenu[menu.menuName] = menu.items || [];
+        });
+        setMenuItems(formattedMenu);
+        const firstCategory = Object.keys(formattedMenu)[0] || "";
+        setActiveTab(firstCategory);
+      }
+    } catch (error) {
+      console.error("Error fetching menu:", error);
+    }
+  };
 
   return (
     <div>
@@ -67,8 +65,8 @@ const MenuPage = () => {
                 <div key={index}>
                   <h2 className="category-title">{category.category}</h2>
                   <div className="menu-list">
-                    {category.items.map((item, idx) => (
-                      <div key={idx} className="menu-item">
+                    {category.items.map((item, id) => (
+                      <div key={id} className="menu-item">
                         <div className="item-heading">
                           <span className="item-name">{item.name}</span>
                           <span className="dots"></span>

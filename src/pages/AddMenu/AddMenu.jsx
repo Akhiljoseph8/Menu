@@ -36,16 +36,20 @@ const AddMenu = () => {
         { menuName, description, items }, 
         { "Content-Type": "application/json" } 
       );
-   console.log(response)
+      if(response.data){
       alert(response.data.message);
+      }else{
+        alert("Could not update menu")
+      }
       setMenuName("");
       setDescription("");
       setItems([{ itemName: "", description: "", price: "" }]);
     } catch (error) {
       console.error("Error adding menu:", error);
-      alert("Failed to add menu. Please try again.");
+      alert(error.message);
     }
   };
+
 
   return (
     <div className="container">

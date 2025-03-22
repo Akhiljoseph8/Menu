@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import './App.css'
 import AddMenu from './pages/AddMenu/AddMenu'
 import MenuPage from './pages/MenuPage/MenuPage'
