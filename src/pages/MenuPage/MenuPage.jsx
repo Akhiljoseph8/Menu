@@ -16,7 +16,7 @@ const MenuPage = () => {
           const formattedMenu = {};
 
           response.data.forEach((menu) => {
-            formattedMenu[menu.menuName] = menu.items || []; 
+            formattedMenu[menu.menuName] = menu.items || [];
           });
 
           setMenuItems(formattedMenu);
@@ -45,21 +45,20 @@ const MenuPage = () => {
         </div>
 
         <div className="menu-categories-section">
-  <div className="menu-tabs-container">
-    <div className="menu-tabs">
-      {Object.keys(menuItems).map((tab) => (
-        <button
-          key={tab}
-          className={`tab-button ${activeTab === tab ? "tab-active" : ""}`}
-          onClick={() => setActiveTab(tab)}
-        >
-          {tab}
-        </button>
-      ))}
-    </div>
-  </div>
-</div>
-
+          <div className="menu-tabs-wrapper">
+            <div className="menu-tabs">
+              {Object.keys(menuItems).map((tab) => (
+                <button
+                  key={tab}
+                  className={`tab-button ${activeTab === tab ? "tab-active" : ""}`}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
 
         <div className="menu-content-wrapper">
           <div className="menu-content-section">
