@@ -16,7 +16,7 @@ body {
 .menu-title-section {
     position: relative;
     width: 100%;
-    background: url('../../public/images/title_background.jpg') no-repeat center;
+    background: url('/images/title_background.jpg') no-repeat center;
     background-size: cover;
     padding: 80px 20px;
     text-align: center;
@@ -91,7 +91,7 @@ body {
     position: relative; 
     width: 100%;
     height: 70vh; 
-    background: url('../../public/images/dark-themed-background.jpg') no-repeat center;
+    background: url('images/dark-themed-background.jpg') no-repeat center;
     background-size: cover;
     display: flex;
     align-items: center;
