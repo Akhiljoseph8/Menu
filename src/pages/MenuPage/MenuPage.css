@@ -41,7 +41,6 @@ body {
     position: relative;
     z-index: 1;
     text-shadow: 3px 3px 5px rgba(195, 3, 3, 0.6);
-
 }
 
 .menu-description {
@@ -58,10 +57,23 @@ body {
     padding: 20px;
 }
 
+.menu-tabs-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    padding-bottom: 10px; 
+}
+
+.menu-tabs-container::-webkit-scrollbar {
+    display: none; 
+}
+
 .menu-tabs {
     display: flex;
-    justify-content: center;
     gap: 10px;
+    flex-wrap: nowrap;
+    min-width: max-content; 
 }
 
 .tab-button {
@@ -75,6 +87,7 @@ body {
     border-radius: 5px;
     min-width: 100px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .tab-button:hover {
@@ -88,9 +101,9 @@ body {
 }
 
 .menu-content-wrapper {
-    position: relative; 
+    position: relative;
     width: 100%;
-    height: 70vh; 
+    height: 70vh;
     background: url('/images/dark-themed-background.jpg') no-repeat center;
     background-size: cover;
     display: flex;
@@ -106,30 +119,27 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); 
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1;
 }
 
 .menu-content-wrapper * {
     position: relative;
-    z-index: 2; 
+    z-index: 2;
 }
-
-
 
 .menu-content-section {
     width: 60%;
-    background: rgba(0, 0, 0, 0.8); 
+    background: rgba(0, 0, 0, 0.8);
     padding: 30px;
     border-radius: 10px;
     border: 1px solid #444;
-    text-align: center; 
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 2px solid white;
-  
 }
 
 .category-title {
@@ -218,5 +228,12 @@ body {
 
     .item-description {
         font-size: 12px;
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 150px;
     }
 }
